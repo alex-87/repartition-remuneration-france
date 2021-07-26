@@ -1,0 +1,111 @@
+<div id="emp-expl">
+    <p>Cet outil permet d’interroger le fichier « Description des emplois salariés en 2018 » de l’INSEE, publié le 21 Juin 2021. Le fichier est un <b>échantillon de 2.3 millions d'entrées</b>, les informations sont donc susceptibles de ne pas être présentes selon les critères choisis du formulaire.</p>
+        <p>Les informations relatives aux données utilisées par cette application sont consultables ici :</p>
+    <ul>
+        <li>Fiche principale ("données salariés"): <a href="https://www.insee.fr/fr/statistiques/5366604">https://www.insee.fr/fr/statistiques/5366604</a></li>
+        <li>Documentation: <a href="https://www.insee.fr/fr/statistiques/5366604#documentation">https://www.insee.fr/fr/statistiques/5366604#documentation</a></li>
+    </ul>
+    <p>Par ailleurs, <b>ni cet outil ni l'auteur de cet outil n'est affilié à l'INSEE</b>. Cet application distribuée et les résultats sont affichés à titre informatif uniquement. L'application est sous licence Open Source <a href="https://joinup.ec.europa.eu/sites/default/files/inline-files/EUPL%20v1_2%20FR.txt">European Union Public License</a>.</p>
+</div>
+
+<div id="emp-form">
+    <form [formGroup]="uForm" (ngSubmit)="onSubmit()">
+        <section>
+            <div class="example-label">
+                <label>Profession (catgorie sociale-professionnelle)</label>
+            </div>
+            <div class="example-button-row">
+                <select formControlName="professionCatSocialPro">
+                    <option value="">Facultatif</option>
+                    <option *ngFor="let elem of listingsService.getProfessionCatSocialProList()" value="{{ elem.id }}">{{ elem.value }}</option>
+                </select>
+            </div>
+        </section>
+        <section>
+            <div class="example-label">
+                <label>Domaine d'emploi de l'employeur</label>
+            </div>
+            <div class="example-button-row">
+                <select formControlName="domEmploiEmployeur">
+                    <option value="">Facultatif</option>
+                    <option *ngFor="let elem of listingsService.getDomEmploiEmployeurList()" value="{{ elem.id }}">{{ elem.value }}</option>
+                </select>
+            </div>
+        </section>
+        <section>
+            <div class="example-label">
+                <label>Département de résidence</label>
+            </div>
+            <div class="example-button-row">
+                <select formControlName="deptResidence">
+                    <option value="">Facultatif</option>
+                    <option *ngFor="let elem of listingsService.getDeptResidenceList()" value="{{ elem.id }}">{{ elem.value }}</option>
+                </select>
+            </div>
+        </section>
+        <section>
+            <div class="example-label">
+                <label>Convention collective</label>
+            </div>
+            <div class="example-button-row">
+                <select formControlName="convColl">
+                    <option value="">Facultatif</option>
+                    <option *ngFor="let elem of listingsService.getConvCollList()" value="{{ elem.id }}">{{ elem.value }}</option>
+                </select>
+            </div>
+        </section>
+        <section>
+            <div class="example-label">
+                <label>Type de contrat de travail</label>
+            </div>
+            <div class="example-button-row">
+                <select formControlName="typeContratDeTravail">
+                    <option value="">Facultatif</option>
+                    <option *ngFor="let elem of listingsService.getTypeContratDeTravailList()" value="{{ elem.id }}">{{ elem.value }}</option>
+                </select>
+            </div>
+        </section>
+        <section>
+            <div class="example-label">
+                <label>Genre</label>
+            </div>
+            <div class="example-button-row">
+                <select formControlName="genre">
+                    <option value="">Facultatif</option>
+                    <option *ngFor="let elem of listingsService.getGenreList()" value="{{ elem.id }}">{{ elem.value }}</option>
+                </select>
+            </div>
+        </section>
+        <section>
+            <div class="example-label">
+                <label>Tranche d'âge</label>
+            </div>
+            <div class="example-button-row">
+                <select formControlName="age">
+                    <option value="">Facultatif</option>
+                    <option *ngFor="let elem of listingsService.getAgeList()" value="{{ elem.id }}">{{ elem.value }}</option>
+                </select>
+            </div>
+        </section>
+        <section>
+            <div class="example-label">
+                <label>Tranche d'effectif</label>
+            </div>
+            <div class="example-button-row">
+                <select formControlName="trancheEffectif">
+                    <option value="">Facultatif</option>
+                    <option *ngFor="let elem of listingsService.getTrancheEffectifList()" value="{{ elem.id }}">{{ elem.value }}</option>
+                </select>
+            </div>
+        </section>
+        <section>
+            <div class="example-label"></div>
+            <div class="example-label">
+                <button mat-raised-button type="submit">Voir les résultats</button>
+            </div>
+        </section>
+    </form>
+</div>
+
+
+<app-resultat *ngIf="jsonDataResponse!=null" [jsonDataResponse]="jsonDataResponse"></app-resultat>
