@@ -13,6 +13,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/angular-travisci
+  local_dir: dist/repartition-remuneration-france
   on:
     branch: main
