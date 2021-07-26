@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "build:prod": "ng build --prod --base-href https://alex-87.github.io/repartition-remuneration-france/",
     "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
-    "test": "ng test"
+    "test": "ng test --watch=false --browsers=ChromeHeadless"
   },
   "private": true,
   "dependencies": {
