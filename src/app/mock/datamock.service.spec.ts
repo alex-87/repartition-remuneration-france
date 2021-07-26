@@ -10,7 +10,4 @@ describe('DatamockService', () => {
     service = TestBed.inject(DatamockService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
 });
