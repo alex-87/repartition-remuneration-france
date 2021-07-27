@@ -15,6 +15,8 @@ export class EmpFormComponent implements OnInit {
 
   public jsonDataResponse: any;
 
+  public isOnError: boolean = false;
+
   uForm = this.formBuilder.group({
     trancheEffectif: '',
     convColl: '',
@@ -50,6 +52,13 @@ export class EmpFormComponent implements OnInit {
       this.uForm.controls['age'].value,
       this.uForm.controls['typeContratDeTravail'].value,
     );
+
+    if( !dm.isValidDamaModel() ) {
+      this.isOnError = true;
+      return;
+    } else {
+      this.isOnError = false;
+    }
 
     let ms = this.datapullService.getStats(dm).subscribe(
       (data) => {

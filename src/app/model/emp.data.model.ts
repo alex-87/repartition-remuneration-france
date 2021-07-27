@@ -77,6 +77,18 @@ export class EmpDataModel {
         this.typeContratDeTravail = typeContratDeTravail;
     }
 
+    isValidDamaModel() : boolean {
+        return (
+            this.trancheEffectif != '' ||
+            this.convColl != '' ||
+            this.deptResidence != '' ||
+            this.domEmploiEmployeur != '' ||
+            this.professionCatSocialPro != '' ||
+            this.genre != '' ||
+            this.typeContratDeTravail != ''
+        );
+    };
+
     /**
      * Get JSon struture.
      * 

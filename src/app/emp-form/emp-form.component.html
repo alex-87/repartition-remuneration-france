@@ -99,7 +99,9 @@
             </div>
         </section>
         <section>
-            <div class="example-label"></div>
+            <div class="example-label">
+                <p *ngIf="isOnError" style="color: red;">Sélectionner au moins un critère.</p>
+            </div>
             <div class="example-label">
                 <button mat-raised-button type="submit">Voir les résultats</button>
             </div>
