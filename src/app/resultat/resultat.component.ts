@@ -27,7 +27,7 @@ export class ResultatComponent implements OnChanges {
 
     for(let e of this.jsonDataResponse) {
       this.barChartLabels.push(e['label']);
-      this.barChartRawData.push((perctTotal==0 ? e['value'] : Math.round(e['value'] * 100 / perctTotal)));
+      this.barChartRawData.push((perctTotal==0 ? e['value'] : e['value'] * 100 / perctTotal));
     }
 
     this.barChartData = [
