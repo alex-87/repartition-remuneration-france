@@ -27,15 +27,15 @@ export class ResultatComponent implements OnChanges {
 
     for(let e of this.jsonDataResponse) {
       this.barChartLabels.push(e['label']);
-      this.barChartRawData.push((perctTotal==0 ? e['value'] : e['value'] * 100 / perctTotal));
+      this.barChartRawData.push((perctTotal==0 ? e['value'] : Math.round(e['value'] * 100 / perctTotal)));
     }
 
     this.barChartData = [
       {
         data : this.barChartRawData,
         label: '% de représentation de la tranche salariale',
-        backgroundColor: 'black',
-        hoverBackgroundColor: 'blue'
+        backgroundColor: 'indigo',
+        hoverBackgroundColor: 'red'
       }
     ];
   }
@@ -45,11 +45,12 @@ export class ResultatComponent implements OnChanges {
     scales: { xAxes: [{}], yAxes: [{}] },
     plugins: {
       datalabels: {
-        anchor: 'end',
-        align: 'end',
+        //anchor: 'end',
+        //align: 'end',
       }
     },
-    aspectRatio: 5
+    maintainAspectRatio: false,
+    aspectRatio: 0.8
   };
 
   public barChartData: ChartDataSets[] = [];
