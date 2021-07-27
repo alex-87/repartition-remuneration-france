@@ -9,6 +9,6 @@ Les informations relatives aux données utilisées par cette application sont co
  - Fiche principale (données salariés): [https://www.insee.fr/fr/statistiques/5366604](https://www.insee.fr/fr/statistiques/5366604)
  - Documentation: [https://www.insee.fr/fr/statistiques/5366604#documentation](https://www.insee.fr/fr/statistiques/5366604#documentation)
 
-Ni cet outil ni l'auteur de cet outil n'est affilié à l'INSEE. Cet application distribuée et les résultats sont affichés à titre informatif uniquement.
+Ni cet outil ni l'auteur de cet outil n'est affilié à l'INSEE. Cette application est distribuée telle quelle sans aucune garantie, de même que les résultats sont affichés à titre informatif uniquement.
 
 L'application est sous licence Open Source European Union Public License.
