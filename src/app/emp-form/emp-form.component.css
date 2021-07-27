@@ -1,9 +1,10 @@
 section {
-    display: table;
     align-tracks: center;
     width: 80%;
     margin-top: 25px;
     margin-bottom: 25px;
+    display: inline-flex;
+    text-align: initial;
 }
 
 .formulaire-label {
@@ -21,8 +22,6 @@ section {
 
 #emp-expl {
     margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-right: 10%;
@@ -33,10 +32,9 @@ section {
 }
 
 #emp-form {
-    margin-top: 15px;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    align-content: center;
+    text-align: center;
 }
 
 select {
