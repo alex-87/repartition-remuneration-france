@@ -1,4 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Select2OptionData } from 'ng-select2';
+
+export interface CustomListingElement {
+  id: string;
+  value: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +13,6 @@ export class ListingsService {
 
   getProfessionCatSocialProList() {
     return [
-      {id : '0',    value : 'Non renseigné'},
       {id : '100X', value : 'Agriculteurs et éleveurs, salariés de leur exploitation'},
       {id : '210X', value : 'Artisans salariés de leur entreprise'},
       {id : '220X', value : 'Commerçants et assimilés, salariés de leur entreprise'},
@@ -442,7 +447,6 @@ export class ListingsService {
 
   getDomEmploiEmployeurList() {
     return [
-      {id : '0', value : 'Non renseigné'},
       {id : '1', value : 'Fonction publique d\'état'},
       {id : '2', value : 'Fonction publique territoriale'},
       {id : '3', value : 'Fonction publique hospitalière'},
@@ -457,7 +461,6 @@ export class ListingsService {
 
   getDeptResidenceList() {
     return [
-      {id : '0', value : 'Non renseigné'},
       {id : '1', value : 'Ain'},
       {id : '2', value : 'Aisne'},
       {id : '3', value : 'Allier'},
@@ -557,14 +560,12 @@ export class ListingsService {
       {id : '971', value : 'Guadeloupe'},
       {id : '972', value : 'Martinique'},
       {id : '973', value : 'Guyane'},
-      {id : '974', value : 'La Réunion'},
-      {id : '99', value : 'Non renseigné'}
+      {id : '974', value : 'La Réunion'}
     ];
   }
 
   getConvCollList() {
     return [
-      {id : '0', value : 'Non renseigné'},
       {id : '2', value : 'Industries textiles de l aube'},
       {id : '3', value : 'Navigation interieure de marchandises ouvriers'},
       {id : '4', value : 'Commerce seine maritime havre detail non alim.'},
@@ -1493,7 +1494,6 @@ export class ListingsService {
 
   getTypeContratDeTravailList() {
     return [
-      {id : '0',   value : 'Non renseigné'},
       {id : 'APP', value : 'Contrat d\'apprentissage'},
       {id : 'AUT', value : 'Autre type de contrat'},
       {id : 'CDD', value : 'Contrat à durée déterminée'},
@@ -1541,6 +1541,19 @@ export class ListingsService {
       {id : '5', value : '100 à 249 postes'},
       {id : '6', value : '250 postes et plus'}
     ];
+  }
+
+  getOptionDataArray(currentConvCollList: Array<CustomListingElement>) : Array<Select2OptionData> {
+    let retArray : Array<Select2OptionData> = new Array<Select2OptionData>();
+    for(let elem of currentConvCollList) {
+      retArray.push(
+        {
+          id : elem['id'],
+          text : elem['value'],
+        }
+      );
+    }
+    return retArray;
   }
 
 }

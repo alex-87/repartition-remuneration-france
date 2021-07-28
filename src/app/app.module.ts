@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Renderer2 } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -10,6 +10,7 @@ import { ChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
 import { ResultatComponent } from './resultat/resultat.component';
 import { EmpFormComponent } from './emp-form/emp-form.component';
+import { NgSelect2Module } from 'ng-select2';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { EmpFormComponent } from './emp-form/emp-form.component';
     MatToolbarModule,
     ChartsModule,
     HttpClientModule,
+    NgSelect2Module,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -96,14 +96,14 @@ export class EmpDataModel {
      */
     toJson() {
         return {
-            'TREFF' : (this.trancheEffectif!='' && this.trancheEffectif.length!=2 ? '0' + this.trancheEffectif : this.trancheEffectif),
-            'CONV_COLL' : this.convColl,
-            'DEPR' : this.deptResidence,
-            'DOMEMPL_EM' : this.domEmploiEmployeur,
-            'PCS' : this.professionCatSocialPro,
-            'GENRE' : this.genre,
-            'AGE_TR' : this.age,
-            'CONT_TRAV' : this.typeContratDeTravail,
+            'TREFF' : (this.trancheEffectif==null ? '' : this.trancheEffectif),
+            'CONV_COLL' : (this.convColl==null ? '' : this.convColl),
+            'DEPR' : (this.deptResidence==null ? '' : this.deptResidence),
+            'DOMEMPL_EM' : (this.domEmploiEmployeur==null ? '' : this.domEmploiEmployeur),
+            'PCS' : (this.professionCatSocialPro==null ? '' : this.professionCatSocialPro),
+            'GENRE' : (this.genre==null ? '' : this.genre),
+            'AGE_TR' : (this.age==null ? '' : this.age),
+            'CONT_TRAV' : (this.typeContratDeTravail==null ? '' : this.typeContratDeTravail),
         };
     }
 

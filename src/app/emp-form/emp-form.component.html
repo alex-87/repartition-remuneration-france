@@ -15,10 +15,13 @@
                 <label>Profession (catgorie sociale-professionnelle)</label>
             </div>
             <div class="formulaire-button-row">
-                <select formControlName="professionCatSocialPro">
-                    <option value="">Facultatif</option>
-                    <option *ngFor="let elem of listingsService.getProfessionCatSocialProList()" value="{{ elem.id }}">{{ elem.value }}</option>
-                </select>
+                <ng-select2
+                    [data]="professionData"
+                    width="100%"
+                    placeholder="Facultatif"
+                    [allowClear]="true"
+                    formControlName="professionCatSocialPro">
+                </ng-select2>
             </div>
         </section>
         <section>
@@ -26,10 +29,13 @@
                 <label>Domaine d'emploi de l'employeur</label>
             </div>
             <div class="formulaire-button-row">
-                <select formControlName="domEmploiEmployeur">
-                    <option value="">Facultatif</option>
-                    <option *ngFor="let elem of listingsService.getDomEmploiEmployeurList()" value="{{ elem.id }}">{{ elem.value }}</option>
-                </select>
+                <ng-select2
+                    [data]="domEmployeurData"
+                    width="100%"
+                    placeholder="Facultatif"
+                    [allowClear]="true"
+                    formControlName="domEmploiEmployeur">
+                </ng-select2>
             </div>
         </section>
         <section>
@@ -37,10 +43,13 @@
                 <label>Département de résidence</label>
             </div>
             <div class="formulaire-button-row">
-                <select formControlName="deptResidence">
-                    <option value="">Facultatif</option>
-                    <option *ngFor="let elem of listingsService.getDeptResidenceList()" value="{{ elem.id }}">{{ elem.value }}</option>
-                </select>
+                <ng-select2
+                    [data]="deptResidenceData"
+                    width="100%"
+                    placeholder="Facultatif"
+                    [allowClear]="true"
+                    formControlName="deptResidence">
+                </ng-select2>
             </div>
         </section>
         <section>
@@ -48,10 +57,13 @@
                 <label>Convention collective</label>
             </div>
             <div class="formulaire-button-row">
-                <select formControlName="convColl">
-                    <option value="">Facultatif</option>
-                    <option *ngFor="let elem of listingsService.getConvCollList()" value="{{ elem.id }}">{{ elem.value }}</option>
-                </select>
+                <ng-select2
+                    [data]="convCollData"
+                    width="100%"
+                    placeholder="Facultatif"
+                    [allowClear]="true"
+                    formControlName="convColl">
+                </ng-select2>
             </div>
         </section>
         <section>
@@ -59,10 +71,13 @@
                 <label>Type de contrat de travail</label>
             </div>
             <div class="formulaire-button-row">
-                <select formControlName="typeContratDeTravail">
-                    <option value="">Facultatif</option>
-                    <option *ngFor="let elem of listingsService.getTypeContratDeTravailList()" value="{{ elem.id }}">{{ elem.value }}</option>
-                </select>
+                <ng-select2
+                    [data]="contratTravailData"
+                    width="100%"
+                    placeholder="Facultatif"
+                    [allowClear]="true"
+                    formControlName="typeContratDeTravail">
+                </ng-select2>
             </div>
         </section>
         <section>
@@ -70,10 +85,13 @@
                 <label>Genre</label>
             </div>
             <div class="formulaire-button-row">
-                <select formControlName="genre">
-                    <option value="">Facultatif</option>
-                    <option *ngFor="let elem of listingsService.getGenreList()" value="{{ elem.id }}">{{ elem.value }}</option>
-                </select>
+                <ng-select2
+                    [data]="genreData"
+                    width="100%"
+                    placeholder="Facultatif"
+                    [allowClear]="true"
+                    formControlName="genre">
+                </ng-select2>
             </div>
         </section>
         <section>
@@ -81,10 +99,13 @@
                 <label>Tranche d'âge</label>
             </div>
             <div class="formulaire-button-row">
-                <select formControlName="age">
-                    <option value="">Facultatif</option>
-                    <option *ngFor="let elem of listingsService.getAgeList()" value="{{ elem.id }}">{{ elem.value }}</option>
-                </select>
+                <ng-select2
+                    [data]="ageData"
+                    width="100%"
+                    placeholder="Facultatif"
+                    [allowClear]="true"
+                    formControlName="age">
+                </ng-select2>
             </div>
         </section>
         <section>
@@ -92,10 +113,13 @@
                 <label>Tranche d'effectif</label>
             </div>
             <div class="formulaire-button-row">
-                <select formControlName="trancheEffectif">
-                    <option value="">Facultatif</option>
-                    <option *ngFor="let elem of listingsService.getTrancheEffectifList()" value="{{ elem.id }}">{{ elem.value }}</option>
-                </select>
+                <ng-select2
+                    [data]="trancheEffectifData"
+                    width="100%"
+                    placeholder="Facultatif"
+                    [allowClear]="true"
+                    formControlName="trancheEffectif">
+                </ng-select2>
             </div>
         </section>
         <section>
