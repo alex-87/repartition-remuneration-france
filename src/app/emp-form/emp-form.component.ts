@@ -47,30 +47,14 @@ export class EmpFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.convCollData = this.listingsService.getOptionDataArray(
-      this.listingsService.getConvCollList()
-    );
-    this.professionData = this.listingsService.getOptionDataArray(
-      this.listingsService.getProfessionCatSocialProList()
-    );
-    this.trancheEffectifData = this.listingsService.getOptionDataArray(
-      this.listingsService.getTrancheEffectifList()
-    );
-    this.deptResidenceData = this.listingsService.getOptionDataArray(
-      this.listingsService.getDeptResidenceList()
-    );
-    this.domEmployeurData = this.listingsService.getOptionDataArray(
-      this.listingsService.getDomEmploiEmployeurList()
-    );
-    this.genreData = this.listingsService.getOptionDataArray(
-      this.listingsService.getGenreList()
-    );
-    this.ageData = this.listingsService.getOptionDataArray(
-      this.listingsService.getAgeList()
-    );
-    this.contratTravailData = this.listingsService.getOptionDataArray(
-      this.listingsService.getTypeContratDeTravailList()
-    );
+    this.convCollData = this.listingsService.getConvCollList();
+    this.professionData = this.listingsService.getProfessionCatSocialProList();
+    this.trancheEffectifData = this.listingsService.getTrancheEffectifList();
+    this.deptResidenceData = this.listingsService.getDeptResidenceList();
+    this.domEmployeurData = this.listingsService.getDomEmploiEmployeurList();
+    this.genreData = this.listingsService.getGenreList();
+    this.ageData = this.listingsService.getAgeList();
+    this.contratTravailData = this.listingsService.getTypeContratDeTravailList();
   }
 
   onSubmit() : void {

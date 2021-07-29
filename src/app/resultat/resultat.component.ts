@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges, OnChanges } from '@angular/core';
-import { Chart, ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 
 
 @Component({
@@ -27,7 +27,7 @@ export class ResultatComponent implements OnChanges {
 
     for(let e of this.jsonDataResponse) {
       this.barChartLabels.push(e['label']);
-      this.barChartRawData.push((perctTotal==0 ? e['value'] : e['value'] * 100 / perctTotal));
+      this.barChartRawData.push((perctTotal==0 ? e['value'] : parseFloat( (e['value'] * 100 / perctTotal).toFixed(2)) ));
     }
 
     this.barChartData = [

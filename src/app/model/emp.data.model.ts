@@ -79,13 +79,13 @@ export class EmpDataModel {
 
     isValidDamaModel() : boolean {
         return (
-            this.trancheEffectif != '' ||
-            this.convColl != '' ||
-            this.deptResidence != '' ||
-            this.domEmploiEmployeur != '' ||
-            this.professionCatSocialPro != '' ||
-            this.genre != '' ||
-            this.typeContratDeTravail != ''
+            (this.trancheEffectif != '' && this.trancheEffectif != null) ||
+            (this.convColl != '' && this.convColl != null) ||
+            (this.deptResidence != '' && this.deptResidence != null) ||
+            (this.domEmploiEmployeur != '' && this.domEmploiEmployeur != null) ||
+            (this.professionCatSocialPro != '' && this.professionCatSocialPro != null) ||
+            (this.genre != '' && this.genre != null) ||
+            (this.typeContratDeTravail != '' && this.typeContratDeTravail != null)
         );
     };
 
