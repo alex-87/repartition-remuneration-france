@@ -25,6 +25,7 @@ export class EmpFormComponent implements OnInit {
 
   public jsonDataResponse: any;
   public isOnError: boolean = false;
+  public isDataLoading: boolean = false;
 
   uForm = this.formBuilder.group({
     trancheEffectif: '',
@@ -77,17 +78,18 @@ export class EmpFormComponent implements OnInit {
       this.isOnError = false;
     }
 
+    this.isDataLoading = true;
+
     let ms = this.datapullService.getStats(dm).subscribe(
       (data) => {
-        console.warn(data['result']);
         this.jsonDataResponse = data['result'];
+        this.isDataLoading = false;
       },
-      (error) => console.error(error)
+      (error) => {
+        console.error(error);
+        this.isDataLoading = false;
+      }
     );
-  }
-
-  convCollSelect() {
-    console.warn('Selected');
   }
 
 }

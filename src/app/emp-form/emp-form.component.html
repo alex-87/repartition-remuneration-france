@@ -127,7 +127,12 @@
                 <p *ngIf="isOnError" style="color: red;">Sélectionner au moins un critère.</p>
             </div>
             <div class="formulaire-label">
-                <button mat-raised-button type="submit">Voir les résultats</button>
+                <button
+                    mat-raised-button
+                    [disabled]="isDataLoading"
+                    type="submit">
+                        {{ isDataLoading == true ? "Chargement..." : "Voir les résultats" }}
+                </button>
             </div>
         </section>
     </form>
