@@ -77,7 +77,7 @@ export class EmpDataModel {
         this.typeContratDeTravail = typeContratDeTravail;
     }
 
-    isValidDamaModel() : boolean {
+    isValidDataModel() : boolean {
         return (
             (this.trancheEffectif != '' && this.trancheEffectif != null) ||
             (this.convColl != '' && this.convColl != null) ||
@@ -85,7 +85,8 @@ export class EmpDataModel {
             (this.domEmploiEmployeur != '' && this.domEmploiEmployeur != null) ||
             (this.professionCatSocialPro != '' && this.professionCatSocialPro != null) ||
             (this.genre != '' && this.genre != null) ||
-            (this.typeContratDeTravail != '' && this.typeContratDeTravail != null)
+            (this.typeContratDeTravail != '' && this.typeContratDeTravail != null) ||
+            (this.age != '' && this.age != null)
         );
     };
 

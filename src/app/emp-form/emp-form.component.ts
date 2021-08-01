@@ -71,7 +71,7 @@ export class EmpFormComponent implements OnInit {
       this.uForm.controls['typeContratDeTravail'].value,
     );
 
-    if( !dm.isValidDamaModel() ) {
+    if( !dm.isValidDataModel() ) {
       this.isOnError = true;
       return;
     } else {
